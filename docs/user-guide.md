@@ -1,5 +1,14 @@
 # 사용 안내
 
+## 시험판 설치
+
+1. [Apple Silicon용 시험판 DMG](https://github.com/taehun2123/space-labels/releases/download/v0.1.0-preview.1/Space-Labels-0.1.0-preview.1-macos-arm64.dmg)를 내려받아 여십시오.
+2. **Space Labels.app**을 **Applications** 폴더로 옮기십시오. 기존 앱을 교체하면 접근성 권한을 다시 등록해야 할 수 있습니다.
+3. 앱을 여십시오. 이 시험판은 Apple 공증을 받지 않았으므로 macOS가 실행을 막을 수 있습니다. 이 저장소에서 받은 파일임을 확인하고 계속 사용하려면 **시스템 설정 → 개인정보 보호 및 보안**의 **그래도 열기**를 선택한 뒤 macOS 인증을 완료하십시오. [Apple의 앱 열기 안내](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac)를 참고하십시오.
+4. 앱의 **권한 설정 열기**에서 접근성 권한을 허용하십시오. 이미 허용으로 보이지만 앱에 적용되지 않으면 아래의 권한 복구 절차를 따르십시오.
+
+이 시험판은 macOS 26.6.2의 Apple Silicon Mac에서 빌드했습니다. Mission Control의 우클릭 편집창은 아직 열리지 않습니다. [확인 상태](compatibility.md)를 보고 사용하십시오.
+
 ## 이름 바꾸기
 
 Mission Control을 열고 상단의 데스크톱·전체 화면 앱·Split View 공간 또는 아래의 개별 앱 창을 우클릭하십시오. 입력 창에 이름을 적고 **저장**을 누르십시오. 이름은 앞뒤 공백을 뺀 1~40자이며 한글과 이모지를 사용할 수 있습니다.

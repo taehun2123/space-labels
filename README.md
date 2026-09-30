@@ -6,7 +6,13 @@ Mission Control에 나타나는 **일반 데스크톱, 전체 화면 앱, Split 
 
 현재 빌드는 macOS 26.6.2의 Apple Silicon에서 제작했습니다. 실제 Mission Control에서 공간과 창은 인식하지만 우클릭 편집창은 열리지 않는 것을 확인했습니다. 입력 감시 권한을 확인 중이며, 여러 디스플레이 동작은 미검증입니다. [검사 결과](docs/testing.md)를 확인하십시오.
 
-이 저장소는 개발 중인 소스를 공개합니다. 현재 우클릭 기능이 작동하지 않으므로 설치용 실행 파일이나 정식 릴리스를 제공하지 않습니다. 직접 빌드하더라도 이 제한이 적용됩니다.
+이 저장소는 개발 중인 소스와 설치 가능한 시험판을 공개합니다. 현재 우클릭 기능이 작동하지 않으므로 정식 릴리스로 사용하지 마십시오. 직접 빌드한 앱에도 같은 제한이 적용됩니다.
+
+## 시험판 설치
+
+[Apple Silicon용 Space Labels 시험판 DMG 바로 다운로드](https://github.com/taehun2123/space-labels/releases/download/v0.1.0-preview.1/Space-Labels-0.1.0-preview.1-macos-arm64.dmg)
+
+DMG를 열고 **Space Labels.app**을 **Applications**로 옮긴 뒤 실행하십시오. 이 시험판은 Developer ID 서명과 Apple 공증을 받지 않았습니다. macOS가 처음 실행을 막으면 다운로드 출처를 확인한 뒤 [시험판 설치 안내](docs/user-guide.md)를 따르십시오. 실제 확인 환경과 제한은 [호환성 문서](docs/compatibility.md)에 있습니다.
 
 ## 시작
 

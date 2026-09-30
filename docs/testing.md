@@ -8,6 +8,7 @@
 swift test --disable-sandbox --scratch-path .build
 python3 scripts/check-docs.py
 ./scripts/build-app.sh <출력 폴더>
+./scripts/package-preview.sh 0.1.0-preview.1 <출력 폴더>
 ```
 
 이 환경에서는 Swift와 Clang 캐시 위치를 프로젝트의 `.build` 아래 절대 경로로 지정했습니다. 릴리스 빌드의 `dsymutil`은 제한된 실행 환경에서 실패하여 빌드 명령만 확장 권한으로 재실행했습니다.
@@ -33,6 +34,7 @@ python3 scripts/check-docs.py
 | Finder 앱 아이콘 | 최신 로컬 빌드에서 표시 확인 |
 | 메뉴 막대 단색 아이콘 | 컴파일 확인, 실제 화면 모습은 미검증 |
 | GitHub 자동 검사 | 첫 공개 커밋에서 Swift 검사·문서 링크·앱 빌드·아이콘 확인 통과 |
+| Apple Silicon 시험판 DMG | 생성·무결성 검사 통과. 읽기 전용 마운트에서 앱, Applications 바로 가기, arm64 실행 파일, 임시 서명 확인 |
 | 문서 내부 링크와 문서 목록 | 문서 7개 검사 통과 |
 
 ## 실기기 확인 절차
@@ -48,3 +50,5 @@ python3 scripts/check-docs.py
 최신 빌드가 실제 Mission Control의 공간과 앱 창을 모두 찾고 이름 표시 패널을 만든 것은 확인했습니다. 실제 우클릭 편집은 실패했습니다. macOS 입력 모니터링 목록에 이 앱이 없고 우클릭 이벤트 탭이 비활성 상태인 것을 확인했으며, 해당 권한을 허용한 뒤의 결과는 미검증입니다. 글자 모습도 확인하지 못했습니다. 자동 검사는 화면 표시의 성공을 증명하지 않습니다.
 
 아이콘을 포함한 로컬 빌드에서 Finder 표시까지 확인했습니다. 새 빌드는 이전 임시 서명의 접근성 권한을 이어받지 않아 Mission Control 표시와 우클릭을 다시 확인하지 않았습니다. 메뉴 막대 아이콘의 실제 모습은 아직 확인하지 못했습니다. 첫 공개 커밋의 GitHub 자동 검사는 2026-09-30에 통과했습니다.
+
+시험판 DMG의 SHA-256은 `29b227a5c71ee7fb05b69e83050cb1cd14d7f459b56ae3acc80fa34719f3ffb2`입니다. 다른 Mac에서 내려받아 처음 실행하는 과정과 macOS 보안 안내 화면은 아직 확인하지 않았습니다.
