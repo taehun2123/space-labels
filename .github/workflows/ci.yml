@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift tests
+        run: swift test --disable-sandbox --scratch-path .build
+      - name: Documentation links
+        run: python3 scripts/check-docs.py
+      - name: App bundle and icon
+        run: |
+          ./scripts/build-app.sh "$RUNNER_TEMP"
+          test -s "$RUNNER_TEMP/Space Labels.app/Contents/Resources/AppIcon.icns"
+          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIconFile' "$RUNNER_TEMP/Space Labels.app/Contents/Info.plist")" = AppIcon
+          codesign --verify --deep --strict "$RUNNER_TEMP/Space Labels.app"

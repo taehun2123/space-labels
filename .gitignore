@@ -1,0 +1,9 @@
+.build/
+.swiftpm/
+dist/
+Tools/
+*.app/
+*.dmg
+*.zip
+*.log
+.DS_Store
